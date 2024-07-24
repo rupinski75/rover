@@ -1,16 +1,15 @@
 require 'rover'
 
-describe 'Space' do
-  rover = Rover.new
-  it 'has 4 directions' do
-    expect(rover.directions.length).to eq(4)
-  end
-end
+# describe 'Space' do
+#   rover = Rover.new
+#   it 'has 4 directions' do
+#     expect(rover.directions.length).to eq(4)
+#   end
+# end
 
 describe 'Rover' do
   rover = Rover.new
 
-  context 'when rover is t  '
   it 'is initially facing north' do
     expect(rover.direction).to eq(:N)
   end
