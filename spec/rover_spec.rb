@@ -10,23 +10,26 @@ end
 describe 'Rover' do
   rover = Rover.new
 
-  it 'is facing north' do
+  context 'when rover is t  '
+  it 'is initially facing north' do
     expect(rover.direction).to eq(:N)
   end
 
   it 'is in the middle of coordinate system' do
     expect(rover.coordinates).to eq([0,0])
   end
-
-  it 'can rotate right' do
-    expect(rover.direction).to eq(:N)
-    rover.rotate_right
-    expect(rover.direction).to eq(:E)
-    rover.rotate_right
-    expect(rover.direction).to eq(:S)
-    rover.rotate_right
-    rover.rotate_right
-    expect(rover.direction).to eq(:N)
+  
+  describe '#turn_right' do
+    it 'should be rotated to the E' do
+      expect(rover.direction).to eq(:N)
+      rover.rotate_right
+      expect(rover.direction).to eq(:E)
+      rover.rotate_right
+      expect(rover.direction).to eq(:S)
+      rover.rotate_right
+      rover.rotate_right
+      expect(rover.direction).to eq(:N)
+    end
   end
 
   it 'can rotate left' do

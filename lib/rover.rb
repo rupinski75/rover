@@ -2,35 +2,17 @@ class Rover
   attr_reader :directions, :direction, :coordinates
 
   def initialize
-    @directions = %w[:N, :E, :S, :W]
+    @directions = [:N, :E, :S, :W]
     @direction = :N
     @coordinates = [0,0]
   end
 
   def rotate_right
-    case direction
-    when :N 
-      @direction = :E
-    when :E
-      @direction = :S
-    when :S
-      @direction = :W
-    when :W
-      @direction = :N
-    end
+    @direction = @directions[(@directions.index(@direction) + 1) % 4]
   end
 
   def rotate_left
-    case direction
-    when :N 
-      @direction = :W
-    when :W
-      @direction = :S
-    when :S
-      @direction = :E
-    when :E
-      @direction = :N
-    end
+    @direction = @directions[(@directions.index(@direction) - 1) % 4]
   end
 
   def move
